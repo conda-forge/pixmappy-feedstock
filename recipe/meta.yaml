@@ -16,10 +16,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - numpy
     - future
     - astropy-base
@@ -30,6 +31,8 @@ requirements:
 test:
   imports:
     - pixmappy
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/gbernstein/pixmappy
